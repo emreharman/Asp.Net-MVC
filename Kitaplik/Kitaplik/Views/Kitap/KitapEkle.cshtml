@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "KitapEkle";
+}
+
+@model Kitaplik.Models.Kitap
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        <row class="col-md-8" style="margin-top:1rem">
+            @Html.TextBoxFor(x => x.Ad, new { placeholder = "Kitabın Adını Girin...", @class = "form-control col-md-4" })
+            @Html.ValidationMessageFor(x=>x.Ad,"",new { @class="text-danger"})<br />
+        </row>
+        <row class="col-md-8" style="margin-top:1rem">
+            @Html.TextBoxFor(x => x.Yazari, new { placeholder = "Kitabın Yazarını Girin...", @class = "form-control col-md-4" })
+            @Html.ValidationMessageFor(x => x.Yazari, "", new { @class = "text-danger" })<br />
+        </row>
+        <row class="col-md-8" style="margin-top:1rem">
+            @Html.TextBoxFor(x => x.Kategori, new { placeholder = "Kitabın Kategorisini Girin...", @class = "form-control col-md-4" })<br />
+            @Html.ValidationMessageFor(x => x.Kategori, "", new { @class = "text-danger" })
+        </row>
+        <row class="col-md-8" style="margin-top:1rem">
+            @Html.TextBoxFor(x => x.YayinEvi, new { placeholder = "Kitabın Yayın Evini Girin...", @class = "form-control col-md-4" })<br />
+            @Html.ValidationMessageFor(x => x.YayinEvi, "", new { @class = "text-danger" })
+        </row>
+        <row class="col-md-8" style="margin-top:1rem">
+            @Html.TextBoxFor(x => x.BasimYili, new { placeholder = "Kitabın Basım Yılını Girin...", @class = "form-control col-md-4" })<br />
+            @Html.ValidationMessageFor(x => x.BasimYili, "", new { @class = "text-danger" })
+        </row>
+
+        
+        
+        <row class="col-md-8" style="margin-top:1rem">
+            <a href="/Kitap/Index/" class="btn btn-success" style="margin-right:1rem;">Geri Dön</a>
+            <input type="submit" value="Kaydet" class="btn btn-primary" />
+        </row>
+        
+    </div>
+}
+
